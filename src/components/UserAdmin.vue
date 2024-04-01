@@ -1,35 +1,42 @@
 <!-- UserAdmin.vue -->
+
 <template>
   <div>
-    <h2>User Administration</h2>
-    <form @submit.prevent="createUser">
-      <div class="mr-bt-10">
-        <label for="name">Name:</label>
-        <input type="text" v-model="newUser.name" id="name" />
-      </div>
-      <div class="mr-bt-10">
-        <label for="email">Email:</label>
-        <input type="email" v-model="newUser.email" id="email" />
-      </div>
-      <div class="mr-bt-10">
-        <label for="password">Password:</label>
-        <input type="password" v-model="newUser.password" id="password" />
-      </div>
-      <button type="submit">Create User</button>
-    </form>
-    <table>
+    <div class="tile">
+      <h2>User Administration</h2>
+    </div>
+    <div class="form-container">
+      <form @submit.prevent="createUser">
+        <div class="mr-bt-10">
+          <label for="name">Name:</label>
+          <input type="text" v-model="newUser.name" id="name" />
+        </div>
+        <div class="mr-bt-10">
+          <label for="email">Email:</label>
+          <input type="email" v-model="newUser.email" id="email" />
+        </div>
+        <div class="mr-bt-10">
+          <label for="password">Password:</label>
+          <input type="password" v-model="newUser.password" id="password" />
+        </div>
+        <button type="submit">Create User</button>
+      </form>
+    </div>
+    <table class="user-table">
       <thead>
         <tr>
+          <th class="th-id">ID</th>
           <th>Name</th>
           <th>Email</th>
-          <th>Actions</th>
+          <th class="th-action">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="user in users" :key="user.id">
+          <td class="th-id">{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
-          <td>
+          <td class="th-action">
             <button @click="viewUser(user)">View</button>
             <button @click="editUser(user)">Edit</button>
             <button @click="deleteUser(user)">Delete</button>
@@ -133,6 +140,7 @@ export default {
 </script>
 
 <style scoped>
+@import "../styles.css";
 form {
   margin: 20px 0;
 }
@@ -161,5 +169,34 @@ th {
 button {
   margin: 2px;
   cursor: pointer;
+}
+/* CSS cho bảng */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* CSS cho header của bảng */
+.user-table th {
+  background-color: #2b99df;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+}
+
+/* CSS cho dòng của bảng */
+.user-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* CSS cho dòng chẵn của bảng */
+.user-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* CSS cho dòng hover của bảng */
+.user-table tr:hover {
+  background-color: #ddd;
 }
 </style>

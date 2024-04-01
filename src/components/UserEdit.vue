@@ -1,18 +1,22 @@
 <!-- EditUser.vue -->
 <template>
   <div>
-    <h2>Edit User</h2>
-    <form @submit.prevent="submitForm">
-      <div class="mr-bt-10">
-        <label for="name">Name:</label>
-        <input type="text" v-model="editedUser.name" id="name" />
-      </div>
-      <div class="mr-bt-10">
-        <label for="email">Email:</label>
-        <input type="email" v-model="editedUser.email" id="email" />
-      </div>
-      <button type="submit">Save Changes</button>
-    </form>
+    <div class="tile">
+      <h2>Edit User</h2>
+    </div>
+    <div class="form-container">
+      <form @submit.prevent="submitForm">
+        <div class="mr-bt-10">
+          <label for="name">Name:</label>
+          <input type="text" v-model="editedUser.name" id="name" />
+        </div>
+        <div class="mr-bt-10">
+          <label for="email">Email:</label>
+          <input type="email" v-model="editedUser.email" id="email" />
+        </div>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -38,7 +42,7 @@ export default {
       axios
         .get(`${process.env.VUE_APP_API_URL}/${userId}`)
         .then((response) => {
-          this.editedUser = response.data;
+          this.editedUser = response.data.user;
         })
         .catch((error) => {
           console.error("Error fetching user:", error);

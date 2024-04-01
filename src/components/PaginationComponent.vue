@@ -42,6 +42,8 @@ export default {
   height: 30px;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: none;
+  border: 1px solid #ccc;
 }
 .pagination button.active {
   background: #0355d9;

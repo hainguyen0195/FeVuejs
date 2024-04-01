@@ -1,0 +1,114 @@
+body {
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    font-family: Arial;
+}
+
+* {}
+
+.th-id {
+    width: 40px;
+    text-align: center !important;
+}
+
+.th-action {
+    width: 20%;
+    text-align: center !important;
+}
+
+/* CSS cho form */
+.form-container {
+    max-width: 400px;
+    margin: 10px auto 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS cho input */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* CSS cho button */
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* CSS cho button hover */
+.form-container button:hover {
+    opacity: 0.8;
+}
+
+/* CSS cho link */
+.form-container .link {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* CSS cho link hover */
+.form-container .link:hover {
+    color: #45a049;
+}
+
+label {
+    font-family: Arial;
+}
+
+
+/* CSS cho tile */
+.tile {
+    text-align: center;
+    margin: 0px 0 20px;
+    padding: 30px 10px;
+    background-color: #055e97;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* CSS cho tiêu đề của tile */
+.tile h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.user-table {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.edit-link {
+    color: #007bff;
+    /* Màu của liên kết */
+    text-decoration: none;
+    /* Không gạch chân */
+    cursor: pointer;
+    /* Con trỏ chuột thành pointer */
+}
+
+.svg-icon {
+    width: 16px;
+    /* Chiều rộng của biểu tượng */
+    height: 16px;
+    /* Chiều cao của biểu tượng */
+    fill: currentColor;
+    /* Màu sẽ được lấp vào các phần tử 'fill' của SVG */
+}
