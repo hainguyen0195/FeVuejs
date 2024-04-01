@@ -67,7 +67,7 @@ export default {
   },
   mounted() {
     // Gọi API để lấy dữ liệu người dùng khi component được mount
-    this.fetchUsers();
+    this.fetchUsers(1);
   },
   methods: {
     createUser() {
