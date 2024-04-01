@@ -39,7 +39,9 @@
           <td class="th-action">
             <button @click="viewUser(user)">View</button>
             <button @click="editUser(user)">Edit</button>
-            <button @click="deleteUser(user)">Delete</button>
+            <button @click="deleteUser(user)" class="button-delete">
+              Delete
+            </button>
           </td>
         </tr>
       </tbody>
@@ -168,7 +170,15 @@ th {
 }
 button {
   margin: 2px;
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+}
+.button-delete {
+  background: red;
 }
 /* CSS cho bảng */
 .user-table {
