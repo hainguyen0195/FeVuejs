@@ -36,7 +36,7 @@ export default {
     fetchUser() {
       const userId = this.$route.params.id;
       axios
-        .get(`http://localhost/exApiBE/public/api/users/${userId}`)
+        .get(`${process.env.VUE_APP_API_URL}/${userId}`)
         .then((response) => {
           this.editedUser = response.data;
         })
@@ -47,10 +47,7 @@ export default {
     submitForm() {
       const userId = this.$route.params.id;
       axios
-        .put(
-          `http://localhost/exApiBE/public/api/users/${userId}`,
-          this.editedUser
-        )
+        .put(`${process.env.VUE_APP_API_URL}/${userId}`, this.editedUser)
         .then((response) => {
           console.log("User updated successfully:", response.data);
           this.$router.push({ name: "UserAdmin" });

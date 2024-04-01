@@ -27,9 +27,7 @@ export default {
   methods: {
     fetchUser() {
       axios
-        .get(
-          `http://localhost/exApiBE/public/api/users/${this.$route.params.id}`
-        )
+        .get(`${process.env.VUE_APP_API_URL}/${this.$route.params.id}`)
         .then((response) => {
           this.user = response.data;
         })

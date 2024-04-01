@@ -72,7 +72,8 @@ export default {
   methods: {
     createUser() {
       axios
-        .post("http://localhost/exApiBE/public/api/users/add", this.newUser)
+        //.post("http://localhost/exApiBE/public/api/users/add", this.newUser)
+        .post(`${process.env.VUE_APP_API_URL}/add`, this.newUser)
         .then((response) => {
           console.log("User created successfully:", response.data);
           // Cập nhật lại danh sách người dùng sau khi tạo thành công
@@ -88,7 +89,7 @@ export default {
     },
     fetchUsers(page) {
       axios
-        .get("http://localhost/exApiBE/public/api/users", {
+        .get(`${process.env.VUE_APP_API_URL}`, {
           params: {
             perPage: this.perPage,
             page: page, // Truyền số trang mới
@@ -113,7 +114,7 @@ export default {
     deleteUser(user) {
       if (confirm("Are you sure you want to delete this user?")) {
         axios
-          .delete(`http://localhost/exApiBE/public/api/users/${user.id}`)
+          .delete(`${process.env.VUE_APP_API_URL}/${user.id}`)
           .then((response) => {
             console.log("User deleted successfully:", response.data);
             // Xóa người dùng khỏi danh sách hiển thị
