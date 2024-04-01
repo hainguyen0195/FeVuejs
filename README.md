@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### file env 
+create .env.local file with default values VUE_APP_API_URL=http://localhost/BeLaravel/public/api/users
+
+create process.env file with default values const apiUrl = process.env.VUE_APP_API_URL;
